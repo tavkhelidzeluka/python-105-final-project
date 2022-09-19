@@ -7,16 +7,17 @@
     <title>Document</title>
 </head>
 <body>
+
+    <head>
+        <a href="{% url "signup" %}">Sign Up</a> | <a href="{% url "login" %}">Login</a>
     
-    {% extends base.html %}
+        {% if user.is_authenticated %}
+            <a href="{% url "logout" %}">LogOut</a>
+        {% else %}
+    </head>
 
+    
     {% block content %}
-
-    <h1> Login </h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-    </form>
 
     {% endblock content%}
 

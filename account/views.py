@@ -15,3 +15,4 @@ class SignUp(CreateView):
     def form_valid(self, form: _ModelFormT) -> HttpResponse:
         return super().form_valid(form)
 
+
