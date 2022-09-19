@@ -9,5 +9,6 @@ class AdminProfile(UserAdmin):
     add_form = AddUserProfile
     form = EditUserProfile
     model = UserProfile
+    # list_display = ["username", "email", "is_stuff"]
 
 admin.site.register(UserProfile, AdminProfile)
