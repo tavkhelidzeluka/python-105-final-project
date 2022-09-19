@@ -9,10 +9,5 @@ from django.urls import reverse_lazy
 
 class SignUp(CreateView):
     form_class = AddUserProfile
-    template_engine = "signup.html"
+    template_name = "signup.html"
     success_url = reverse_lazy("login")
-
-    def form_valid(self, form: _ModelFormT) -> HttpResponse:
-        return super().form_valid(form)
-
-

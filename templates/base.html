@@ -8,13 +8,13 @@
 </head>
 <body>
 
-    <head>
-        <a href="{% url "signup" %}">Sign Up</a> | <a href="{% url "login" %}">Login</a>
+    <div>
+        <a href="{% url "signup" %}">Sign Up</a> | <a href="{% url "login" %}">Login</a> 
     
         {% if user.is_authenticated %}
             <a href="{% url "logout" %}">LogOut</a>
-        {% else %}
-    </head>
+        {% endif %}
+    </div>
 
     
     {% block content %}
