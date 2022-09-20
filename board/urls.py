@@ -3,7 +3,7 @@ from django.urls import path, include
 
 from board.views import PostView, about_view, home_view
 
-app_name = "messageboard"
+app_name = "board"
 
 urlpatterns = [
     path("", home_view, name="home"),

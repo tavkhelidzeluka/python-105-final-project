@@ -10,8 +10,8 @@
     
     <div>
 
-        <a href="{% url "account:signup" %}">Sign Up</a> | <a href="{% url "account:login" %}">Login</a>
-        <a href="{% url "board:home" %}">Home</a> | <a href="{% url "board:about" %}">About</a>
+        <a href="{% url "account:signup" %}">Sign Up</a> | <a href="{% url "account:login" %}">Login</a> |
+        <a href="{% url "board:home" %}">Home</a> | <a href="{% url "board:about" %}">About</a> |
     
         {% if user.is_authenticated %}
             <a href="{% url "account:logout" %}">LogOut</a>
