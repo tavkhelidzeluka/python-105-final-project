@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse, Http404
-from board.models import Posts
+from postsite.models import Posts
 from django.views.generic import ListView
 
 # Create your views here.

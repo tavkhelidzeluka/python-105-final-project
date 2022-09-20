@@ -1,12 +1,11 @@
 from django.contrib import admin
 from django.urls import path, include
+from .views import home_view, about_view, PostView
 
-from board.views import PostView, about_view, home_view
-
-app_name = "board"
+app_name = "postsite"
 
 urlpatterns = [
     path("", home_view, name="home"),
     path("about/", about_view, name="about"),
-    path("posts/", PostView.as_view(), name="posts")
+    path("posts/", PostView.as_view(), name="posts"),
 ]

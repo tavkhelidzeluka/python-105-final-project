@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "account",
-    "board",
+    "postsite",
 ]
 
 MIDDLEWARE = [
@@ -128,5 +128,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "account.UserProfile"
 
-LOGIN_REDIRECT_URL = "board:home"
-LOGOUT_REDIRECT_URL = "board:home"
+LOGIN_REDIRECT_URL = "postsite:home"
+LOGOUT_REDIRECT_URL = "postsite:home"
