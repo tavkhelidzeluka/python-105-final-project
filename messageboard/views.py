@@ -6,3 +6,5 @@ from django.http import HttpRequest, HttpResponse, Http404
 def homepage(request: HttpRequest) -> HttpResponse:
     return render(request, "home.html")
 
+def aboutpage(request: HttpRequest) -> HttpResponse:
+    return render(request, "about.html")
