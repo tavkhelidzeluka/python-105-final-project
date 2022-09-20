@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<ul>
+    {% for message in Messages %}
+    <li>
+        {{ message.author }} - {{ post.text }}
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock content%}
