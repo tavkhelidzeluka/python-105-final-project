@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse, Http404
-from messageboard.models import Messages
+from board.models import Posts
 from django.views.generic import ListView
 
 # Create your views here.
@@ -11,6 +11,6 @@ def home_view(request: HttpRequest) -> HttpResponse:
 def about_view(request: HttpRequest) -> HttpResponse:
     return render(request, "about.html")
 
-class Message_view(ListView):
-    model = Messages
-    template_name = "message.html"
+class PostView(ListView):
+    model = Posts
+    template_name = "posts.html"
