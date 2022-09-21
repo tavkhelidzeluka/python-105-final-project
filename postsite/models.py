@@ -14,7 +14,7 @@ class Posts(models.Model):
 class Comment(models.Model):
     post = models.ForeignKey(Posts, on_delete=models.CASCADE)
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
-    text = models.TextField
+    text = models.TextField()
 
     def __str__(self):
         return self.text[:20]
