@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse, Http404
 from postsite.models import Posts
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 # Create your views here.
 
@@ -14,3 +14,7 @@ def about_view(request: HttpRequest) -> HttpResponse:
 class PostView(ListView):
     model = Posts
     template_name = "posts.html"
+
+class PostDetailView(DetailView):
+    model = Posts
+    template_name = "post_detail.html"
