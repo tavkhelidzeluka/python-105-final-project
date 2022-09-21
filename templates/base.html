@@ -12,7 +12,7 @@
 
         <a href="{% url "account:signup" %}">Sign Up</a> | <a href="{% url "account:login" %}">Login</a> |
         <a href="{% url "postsite:home" %}">Home</a> | <a href="{% url "postsite:about" %}">About</a> |
-    
+
         {% if user.is_authenticated %}
             <a href="{% url "account:logout" %}">LogOut</a>
         {% endif %}

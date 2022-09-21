@@ -8,5 +8,6 @@ urlpatterns = [
     path("", home_view, name="home"),
     path("about/", about_view, name="about"),
     path("posts/", PostView.as_view(), name="posts"),
-    path("posts/<int:pk>", PostDetailView.as_view(), name="post_detail"),
+    path("posts/<int:pk>/", PostDetailView.as_view(), name="post_detail"),
+    #path("posts/delete/<int:pk>/",)
 ]
