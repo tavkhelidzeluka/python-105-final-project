@@ -13,7 +13,7 @@ class Posts(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("post_detail", args=[str(self.pk)])
+        return reverse("postsite:post_detail", args=[str(self.pk)])
 
 
 class Comment(models.Model):
@@ -25,4 +25,4 @@ class Comment(models.Model):
         return self.text[:20]
 
     def get_absolute_url(self):
-        return reverse("home", args=[str(self.pk)])
+        return reverse("postsite:home", args=[str(self.pk)])
