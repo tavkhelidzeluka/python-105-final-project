@@ -24,7 +24,11 @@ class PostDetailView(DetailView):
 class PostCreateView(CreateView):
     model = Posts
     template_name = "post_create.html"
-    fields = "__all__"
+    fields = ["title", "text"]
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 class PostUpdateView(UpdateView):
     model = Posts

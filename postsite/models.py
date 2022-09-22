@@ -1,5 +1,6 @@
 from django.db import models
 from account.models import UserProfile
+from django.urls import reverse
 
 # Create your models here.
 class Posts(models.Model):
@@ -11,6 +12,10 @@ class Posts(models.Model):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return reverse("post_detail", args=[str(self.pk)])
+
+
 class Comment(models.Model):
     post = models.ForeignKey(Posts, on_delete=models.CASCADE)
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
@@ -18,3 +23,6 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.text[:20]
+
+    def get_absolute_url(self):
+        return reverse("home", args=[str(self.pk)])
