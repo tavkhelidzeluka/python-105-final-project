@@ -1,4 +1,4 @@
-from turtle import title
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse, Http404
 from postsite.models import Posts
@@ -21,10 +21,11 @@ class PostDetailView(DetailView):
     model = Posts
     template_name = "post_detail.html"
 
-class PostCreateView(CreateView):
+class PostCreateView(LoginRequiredMixin, CreateView):
     model = Posts
     template_name = "post_create.html"
     fields = ["title", "text"]
+    login_url = "account:login"
 
     def form_valid(self, form):
         form.instance.user = self.request.user
