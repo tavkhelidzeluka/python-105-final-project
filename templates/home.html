@@ -2,9 +2,22 @@
 
 {% block content %}
 
-<h1>  </h1>
+<h1> forum </h1>
 <p>
     Welcome to our forum
+
+    <div>
+        <ul>
+            {% for post in object_list %}
+            <li>
+                {{ post.title }} - {{ post.text }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    
 </p>
+
+
 
 {% endblock content%}
