@@ -15,7 +15,7 @@ def about_view(request: HttpRequest) -> HttpResponse:
 
 class PostView(ListView):
     model = Posts
-    template_name = "home.html"
+    template_name = "posts.html"
 
 class PostDetailView(DetailView):
     model = Posts
@@ -31,12 +31,14 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
-class PostUpdateView(UpdateView):
+class PostUpdateView(LoginRequiredMixin, UpdateView):
     model = Posts
     template_name = "post_detail.html"
     fields = ["title", "text"]
+    login_url = "account:login"
 
-class PostDeleteView(DeleteView):
+class PostDeleteView(LoginRequiredMixin, DeleteView):
     model = Posts
     template_name = "post_detail.html"
     success_url = reverse_lazy
+    login_url = "account:login"

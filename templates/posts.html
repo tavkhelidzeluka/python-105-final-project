@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> forum </h1>
+<p>
+    Welcome to our forum
+
+    <div>
+        <ul>
+            {% for post in object_list %}
+            <li>
+                <a href="{% url "postsite:post_detail" post.pk %}"> {{ post.title }} - {{ post.text }} </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+</p>
+
+{% endblock content%}

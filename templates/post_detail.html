@@ -10,6 +10,20 @@
 
 
 
+<form method="post" action="{% url "postsite:post_edit" posts.id %}" >
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button> Edit </button>
+</form>
+
+
+<form method="post" action="{% url "postsite:post_delete" posts.id %}" >
+    {% csrf_token %}
+    <button> Delete </button>
+</form>
+
+
+
 <div>
 
     {% for comment in posts.comment_set.all %}
