@@ -28,10 +28,10 @@ class PostCreateView(CreateView):
 
 class PostUpdateView(UpdateView):
     model = Posts
-    template_name = "post_edit.html"
+    template_name = "post_detail.html"
     fields = ["title", "text"]
 
 class PostDeleteView(DeleteView):
     model = Posts
-    template_name = "post_delete.html"
+    template_name = "post_detail.html"
     success_url = reverse_lazy

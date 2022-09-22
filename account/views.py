@@ -9,5 +9,5 @@ from django.urls import reverse_lazy
 
 class SignUp(CreateView):
     form_class = AddUserProfile
-    template_name = "signup.html"
+    template_name = "registration/signup.html"
     success_url = reverse_lazy("login")
