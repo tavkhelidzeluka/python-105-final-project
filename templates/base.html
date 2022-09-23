@@ -10,7 +10,11 @@
     
     <div>
 
+        {% if not user.is_authenticated %}
         <a href="{% url "account:signup" %}">Sign Up</a> | <a href="{% url "account:login" %}">Login</a> |
+        {% endif %}
+        
+
         <a href="{% url "postsite:home" %}">Home</a> | <a href="{% url "postsite:about" %}">About</a> |
         <a href="{% url "postsite:post_new" %}">new post</a> |
 
