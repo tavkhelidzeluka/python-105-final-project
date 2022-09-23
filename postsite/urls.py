@@ -12,9 +12,9 @@ from .views import (
 app_name = "postsite"
 
 urlpatterns = [
-    path("", home_view, name="home"),
+    # path("", home_view, name="home"),
     path("about/", about_view, name="about"),
-    path("posts/", PostView.as_view(), name="posts"),
+    path("", PostView.as_view(), name="home"),
     path("posts/<int:pk>/", PostDetailView.as_view(), name="post_detail"),
     path("posts/delete/<int:pk>/", PostDeleteView.as_view(), name="post_delete"),
     path("posts/new", PostCreateView.as_view(), name="post_new"),

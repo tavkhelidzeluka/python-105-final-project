@@ -15,7 +15,7 @@ def about_view(request: HttpRequest) -> HttpResponse:
 
 class PostView(ListView):
     model = Posts
-    template_name = "posts.html"
+    template_name = "home.html"
 
 class PostDetailView(DetailView):
     model = Posts
